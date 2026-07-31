@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details | Leisure Lodge Hotel</title>
+    <meta name="description" content="View detailed information and photos of our luxury rooms and suites at Leisure Lodge Hotel.">
+    <meta name="author" content="Leisure Lodge Hotel">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                fontFamily: {
+                    serif: ['Playfair Display', 'serif'],
+                    sans: ['Inter', 'sans-serif'],
+                },
+                colors: {
+                    lodge: {
+                        50: '#fdf8f3', 100: '#f9ead5', 200: '#f2d4a8', 300: '#e8b46f',
+                        400: '#d9933f', 500: '#c77a1e', 600: '#a96018', 700: '#874a17',
+                        800: '#6f3d1a', 900: '#5c331a',
+                    },
+                    ocean: {
+                        50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
+                        400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
+                        800: '#075985', 900: '#0c4a6e',
+                    }
+                }
+            }
+        }
+    };
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏨%3C/text%3E%3C/svg%3E">
+</head>
+<body class="font-sans text-gray-800 antialiased">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <button id="dark-mode-toggle" class="fixed top-24 right-6 z-40 w-12 h-12 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110" aria-label="Toggle dark mode">
+        <i id="sun-icon" class="fa-solid fa-sun w-6 h-6 text-amber-500 hidden" aria-hidden="true"></i>
+        <i id="moon-icon" class="fa-solid fa-moon w-6 h-6 text-indigo-500" aria-hidden="true"></i>
+    </button>
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center gap-2" aria-label="Leisure Lodge Hotel - Home">
+                    <div class="w-10 h-10 bg-lodge-500 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-hotel text-white text-lg" aria-hidden="true"></i>
+                    </div>
+                    <span class="font-serif text-2xl font-bold text-white" id="nav-logo-text">Leisure Lodge</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="rooms.html" class="nav-link text-white/90 hover:text-white font-medium transition">Rooms</a>
+                    <a href="amenities.html" class="nav-link text-white/90 hover:text-white font-medium transition">Amenities</a>
+                    <a href="about.html" class="nav-link text-white/90 hover:text-white font-medium transition">About</a>
+                    <a href="faq.html" class="nav-link text-white/90 hover:text-white font-medium transition">FAQ</a>
+                    <a href="contact.html" class="nav-link text-white/90 hover:text-white font-medium transition">Contact</a>
+                    <button onclick="window.location.href='rooms.html'" class="bg-lodge-500 hover:bg-lodge-600 text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg hover:shadow-xl">Book Now</button>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars w-6 h-6" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg shadow-lg" role="menu">
+            <div class="px-4 py-4 space-y-3">
+                <a href="rooms.html" class="block text-gray-800 font-medium py-2" role="menuitem">Rooms</a>
+                <a href="amenities.html" class="block text-gray-800 font-medium py-2" role="menuitem">Amenities</a>
+                <a href="about.html" class="block text-gray-800 font-medium py-2" role="menuitem">About</a>
+                <a href="faq.html" class="block text-gray-800 font-medium py-2" role="menuitem">FAQ</a>
+                <a href="contact.html" class="block text-gray-800 font-medium py-2" role="menuitem">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header" style="min-height: 30vh;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20">
+            <nav aria-label="Breadcrumb" class="breadcrumb mb-4">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="rooms.html">Rooms</a>
+                <span class="breadcrumb-separator">/</span>
+                <span aria-current="page" id="breadcrumb-room-name">Room Details</span>
+            </nav>
+            <h1 class="font-serif text-5xl md:text-6xl font-bold text-white" id="room-detail-title">Room Details</h1>
+        </div>
+    </section>
+
+    <main id="main-content" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="room-detail-content">
+                <!-- Content populated by JS -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-lodge-500 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                        </div>
+                        <span class="font-serif text-2xl font-bold">Leisure Lodge</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed max-w-md">Your home away from home. We pride ourselves on delivering exceptional hospitality and creating unforgettable memories for every guest.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="rooms.html" class="hover:text-lodge-400 transition">Rooms & Suites</a></li>
+                        <li><a href="amenities.html" class="hover:text-lodge-400 transition">Amenities</a></li>
+                        <li><a href="about.html" class="hover:text-lodge-400 transition">About Us</a></li>
+                        <li><a href="faq.html" class="hover:text-lodge-400 transition">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-lodge-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/leisurelodgehotel" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-lodge-500 rounded-full flex items-center justify-center transition" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-white text-base" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/leisurelodgehotel" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-lodge-500 rounded-full flex items-center justify-center transition" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-white text-base" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@leisurelodgehotel" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-lodge-500 rounded-full flex items-center justify-center transition" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok text-white text-base" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2026 Leisure Lodge Hotel. All rights reserved.</p>
+                <div class="flex gap-6 text-gray-500 text-sm">
+                    <a href="#" class="hover:text-lodge-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-lodge-400 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-lodge-400 transition">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script>
+    // Room detail page specific script
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const roomId = urlParams.get('room');
+        const roomList = Array.isArray(window.rooms) ? window.rooms : [];
+
+        if (!roomId || !roomList.length) {
+            document.getElementById('room-detail-content').innerHTML = `
+                <div class="text-center py-20">
+                    <h2 class="font-serif text-3xl font-bold text-gray-900 dark:text-white mb-4">Room Not Found</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">The room you're looking for doesn't exist.</p>
+                    <a href="rooms.html" class="bg-lodge-500 hover:bg-lodge-600 text-white px-8 py-3 rounded-full font-semibold transition">View All Rooms</a>
+                </div>
+            `;
+            return;
+        }
+
+        const room = roomList.find(r => r.id === roomId);
+        if (!room) {
+            document.getElementById('room-detail-content').innerHTML = `
+                <div class="text-center py-20">
+                    <h2 class="font-serif text-3xl font-bold text-gray-900 dark:text-white mb-4">Room Not Found</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">The room you're looking for doesn't exist.</p>
+                    <a href="rooms.html" class="bg-lodge-500 hover:bg-lodge-600 text-white px-8 py-3 rounded-full font-semibold transition">View All Rooms</a>
+                </div>
+            `;
+            return;
+        }
+
+        document.getElementById('room-detail-title').textContent = room.name;
+        document.getElementById('breadcrumb-room-name').textContent = room.name;
+
+        document.getElementById('room-detail-content').innerHTML = `
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="room-gallery-main mb-4">
+                        <img id="detail-main-img" src="${room.images[0]}" alt="${room.name}" class="w-full h-96 object-cover rounded-2xl shadow-xl" loading="lazy">
+                    </div>
+                    <div class="room-gallery-thumbs">
+                        ${room.images.map((img, idx) => `
+                            <div class="${idx === 0 ? 'active' : ''}" onclick="changeDetailImage('${img}', this)">
+                                <img src="${img}" alt="${room.name} - view ${idx + 1}" loading="lazy">
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-lodge-100 dark:bg-lodge-900/30 text-lodge-700 dark:text-lodge-400 px-3 py-1 rounded-full text-sm font-semibold">$${room.price}/night</span>
+                        <span class="bg-ocean-100 dark:bg-ocean-900/30 text-ocean-700 dark:text-ocean-400 px-3 py-1 rounded-full text-sm font-semibold">${room.size}</span>
+                    </div>
+                    <h2 class="font-serif text-4xl font-bold text-gray-900 dark:text-white mb-4">${room.name}</h2>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">${room.description}</p>
+
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-users w-5 h-5 text-ocean-500" aria-hidden="true"></i>
+                        <span class="text-gray-700 dark:text-gray-300 font-medium">Up to ${room.guests} guests</span>
+                    </div>
+
+                    <h3 class="font-semibold text-gray-900 dark:text-white text-lg mb-3">Room Features</h3>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        ${room.features.map(f => `<span class="bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full text-sm font-medium">${f}</span>`).join('')}
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-slate-800 rounded-2xl p-6 mb-8">
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-4">What's Included</h3>
+                        <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check w-5 h-5 text-green-500" aria-hidden="true"></i> Complimentary breakfast</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check w-5 h-5 text-green-500" aria-hidden="true"></i> Free high-speed WiFi</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check w-5 h-5 text-green-500" aria-hidden="true"></i> Daily housekeeping</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check w-5 h-5 text-green-500" aria-hidden="true"></i> 24/7 room service</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check w-5 h-5 text-green-500" aria-hidden="true"></i> Access to all hotel amenities</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <button onclick="openBookingModal('${room.id}')" class="flex-1 bg-lodge-500 hover:bg-lodge-600 text-white py-4 rounded-xl font-semibold text-lg transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-days w-5 h-5" aria-hidden="true"></i>
+                            Book This Room
+                        </button>
+                        <a href="rooms.html" class="px-6 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-xl font-semibold hover:border-lodge-500 hover:text-lodge-500 transition flex items-center justify-center">
+                            Back to Rooms
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    function changeDetailImage(src, thumb) {
+        document.getElementById('detail-main-img').src = src;
+        document.querySelectorAll('.room-gallery-thumbs > div').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Leisure Lodge Hotel">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://leisurelodgehotel.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://images.unsplash.com">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="css/styles.css">
+
+<script>
+tailwind.config = {
+    darkMode: 'class',
+    theme: {
+        extend: {
+            fontFamily: {
+                serif: ['Playfair Display', 'serif'],
+                sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+                lodge: {
+                    50: '#fdf8f3', 100: '#f9ead5', 200: '#f2d4a8', 300: '#e8b46f',
+                    400: '#d9933f', 500: '#c77a1e', 600: '#a96018', 700: '#874a17',
+                    800: '#6f3d1a', 900: '#5c331a',
+                },
+                ocean: {
+                    50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
+                    400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
+                    800: '#075985', 900: '#0c4a6e',
+                }
+            }
+        }
+    }
+};
+</script>
+    <title>Leisure Lodge Hotel | Where Comfort Meets Elegance</title>
+    <meta name="description" content="Experience luxury and relaxation at Leisure Lodge Hotel. Ocean views, world-class amenities, and award-winning hospitality in Paradise City. Book your stay today.">
+    <meta name="keywords" content="luxury hotel, beach resort, hotel booking, spa, fine dining, Paradise City, ocean view suites">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leisurelodgehotel.com">
+    <meta property="og:title" content="Leisure Lodge Hotel | Where Comfort Meets Elegance">
+    <meta property="og:description" content="Experience luxury and relaxation at Leisure Lodge Hotel. Ocean views, world-class amenities, and award-winning hospitality.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80">
+    <meta property="og:site_name" content="Leisure Lodge Hotel">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Leisure Lodge Hotel | Where Comfort Meets Elegance">
+    <meta name="twitter:description" content="Experience luxury and relaxation at Leisure Lodge Hotel. Ocean views, world-class amenities, and award-winning hospitality.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏨%3C/text%3E%3C/svg%3E">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Leisure Lodge Hotel",
+      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80",
+      "@id": "https://leisurelodgehotel.com",
+      "url": "https://leisurelodgehotel.com",
+      "telephone": "+23278498784",
+      "priceRange": "$$$",
+      "starRating": { "@type": "Rating", "ratingValue": "4.9" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "30 Off Cape Road, Off Kallon Drive",
+        "addressLocality": "Aberdeen",
+        "addressCountry": "SL"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 34.0901, "longitude": -118.4065 },
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2847", "bestRating": "5" },
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "Swimming Pool", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Spa & Wellness", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Fine Dining Restaurant", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Fitness Center", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Airport Shuttle", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Room Service", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Concierge Service", "value": true}
+      ],
+      "checkinTime": "15:00",
+      "checkoutTime": "11:00",
+      "numberOfRooms": 50,
+      "yearBuilt": 2009
+    }
+    </script>
+</head>
+<body class="font-sans text-gray-800 antialiased">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <button id="dark-mode-toggle" class="fixed top-24 right-6 z-40 w-12 h-12 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110" aria-label="Toggle dark mode">
+    <i id="sun-icon" class="fa-solid fa-sun w-6 h-6 text-amber-500 hidden" aria-hidden="true"></i>
+    <i id="moon-icon" class="fa-solid fa-moon w-6 h-6 text-indigo-500" aria-hidden="true"></i>
+</button>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center gap-2" aria-label="Leisure Lodge Hotel - Home">
+                <div class="w-10 h-10 bg-lodge-500 rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-hotel w-6 h-6 text-white"></i>
+                </div>
+                <span class="font-serif text-2xl font-bold text-white" id="nav-logo-text">Leisure Lodge</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="rooms.html" class="nav-link text-white/90 hover:text-white font-medium transition">Rooms</a>
+                <a href="amenities.html" class="nav-link text-white/90 hover:text-white font-medium transition">Amenities</a>
+                <a href="about.html" class="nav-link text-white/90 hover:text-white font-medium transition">About</a>
+                <a href="faq.html" class="nav-link text-white/90 hover:text-white font-medium transition">FAQ</a>
+                <a href="contact.html" class="nav-link text-white/90 hover:text-white font-medium transition">Contact</a>
+                <button onclick="scrollToBooking()" class="bg-lodge-500 hover:bg-lodge-600 text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg hover:shadow-xl">Book Now</button>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle mobile menu" aria-expanded="false">
+                <i class="fa-solid fa-bars w-6 h-6" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg shadow-lg" role="menu">
+        <div class="px-4 py-4 space-y-3">
+            <a href="rooms.html" class="block text-gray-800 font-medium py-2" role="menuitem">Rooms</a>
+            <a href="amenities.html" class="block text-gray-800 font-medium py-2" role="menuitem">Amenities</a>
+            <a href="about.html" class="block text-gray-800 font-medium py-2" role="menuitem">About</a>
+            <a href="faq.html" class="block text-gray-800 font-medium py-2" role="menuitem">FAQ</a>
+            <a href="contact.html" class="block text-gray-800 font-medium py-2" role="menuitem">Contact</a>
+            <button onclick="scrollToBooking()" class="w-full bg-lodge-500 text-white py-3 rounded-full font-medium">Book Now</button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="main-content" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 fade-in" style="animation-delay:0.1s">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    <span class="text-white/90 text-sm font-medium">Now Open for Bookings</span>
+                </div>
+                <h1 class="font-serif text-5xl md:text-7xl font-bold text-white leading-tight mb-6 fade-in" style="animation-delay:0.2s">
+                    Where Comfort<br>Meets <span class="text-lodge-300">Elegance</span>
+                </h1>
+                <p class="text-lg md:text-xl text-white/80 mb-8 leading-relaxed fade-in" style="animation-delay:0.3s">
+                    Experience the perfect blend of luxury and relaxation at Leisure Lodge. 
+                    Nestled in serene surroundings, our hotel offers an unforgettable escape.
+                </p>
+                <div class="flex flex-wrap gap-4 fade-in" style="animation-delay:0.4s">
+                    <button onclick="scrollToBooking()" class="bg-lodge-500 hover:bg-lodge-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition shadow-xl hover:shadow-2xl flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        Book Your Stay
+                    </button>
+                    <a href="rooms.html" class="glass text-white px-8 py-4 rounded-full font-semibold text-lg transition hover:bg-white/20 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        View Rooms
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-16 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center scroll-reveal">
+                    <div class="text-4xl font-serif font-bold text-lodge-600 mb-2">50+</div>
+                    <div class="text-gray-500 dark:text-gray-400 font-medium">Luxury Rooms</div>
+                </div>
+                <div class="text-center scroll-reveal" style="transition-delay:0.1s">
+                    <div class="text-4xl font-serif font-bold text-ocean-600 mb-2">4.9</div>
+                    <div class="text-gray-500 dark:text-gray-400 font-medium">Guest Rating</div>
+                </div>
+                <div class="text-center scroll-reveal" style="transition-delay:0.2s">
+                    <div class="text-4xl font-serif font-bold text-lodge-600 mb-2">15+</div>
+                    <div class="text-gray-500 dark:text-gray-400 font-medium">Years Experience</div>
+                </div>
+                <div class="text-center scroll-reveal" style="transition-delay:0.3s">
+                    <div class="text-4xl font-serif font-bold text-ocean-600 mb-2">24/7</div>
+                    <div class="text-gray-500 dark:text-gray-400 font-medium">Concierge Service</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Rooms Preview -->
+    <section id="rooms" class="py-20 bg-lodge-50 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-lodge-600 font-semibold tracking-wider uppercase text-sm">Accommodations</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-3 mb-4">Our Rooms & Suites</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Choose from our carefully curated selection of rooms, each designed for maximum comfort and style.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="rooms-grid"></div>
+            <div class="text-center mt-12">
+                <a href="rooms.html" class="inline-flex items-center gap-2 bg-lodge-500 hover:bg-lodge-600 text-white px-8 py-3 rounded-full font-semibold transition shadow-lg hover:shadow-xl">
+                    View All Rooms
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Preview -->
+    <section id="amenities" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-ocean-600 font-semibold tracking-wider uppercase text-sm">Facilities</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-3 mb-4">World-Class Amenities</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Everything you need for a perfect stay, right at your fingertips.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" id="amenities-grid"></div>
+            <div class="text-center mt-12">
+                <a href="amenities.html" class="inline-flex items-center gap-2 border-2 border-lodge-500 text-lodge-500 hover:bg-lodge-500 hover:text-white px-8 py-3 rounded-full font-semibold transition">
+                    Explore All Amenities
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section id="about" class="py-20 bg-ocean-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+                </pattern>
+                <rect width="100" height="100" fill="url(#grid)"/>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <span class="text-ocean-300 font-semibold tracking-wider uppercase text-sm">Our Story</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mt-3 mb-6">A Legacy of Hospitality</h2>
+                    <p class="text-ocean-100 text-lg leading-relaxed mb-6">
+                        Founded in 2009, Leisure Lodge has grown from a charming boutique hotel into a beloved destination 
+                        for travelers seeking both adventure and tranquility. Our commitment to exceptional service 
+                        and attention to detail has earned us recognition as one of the region's finest accommodations.
+                    </p>
+                    <p class="text-ocean-100 text-lg leading-relaxed mb-8">
+                        Every corner of our property reflects our passion for creating memorable experiences. 
+                        From our locally sourced cuisine to our thoughtfully designed spaces, we invite you to 
+                        discover what makes Leisure Lodge truly special.
+                    </p>
+                    <a href="about.html" class="inline-flex items-center gap-2 bg-white text-ocean-900 px-8 py-3 rounded-full font-semibold transition hover:bg-ocean-50 shadow-lg">
+                        Read Our Story
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-4 scroll-reveal" style="transition-delay:0.2s">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Hotel exterior view" class="rounded-2xl shadow-2xl w-full h-64 object-cover" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80" alt="Elegant hotel interior" class="rounded-2xl shadow-2xl w-full h-64 object-cover mt-8" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-lodge-50 dark:bg-slate-950 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-lodge-600 font-semibold tracking-wider uppercase text-sm">Testimonials</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mt-3">What Our Guests Say</h2>
+            </div>
+            <div class="relative">
+                <div class="overflow-hidden">
+                    <div class="testimonial-track" id="testimonial-track"></div>
+                </div>
+                <div class="flex justify-center gap-2 mt-8" id="carousel-dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Widget -->
+    <section class="py-16 bg-ocean-50 dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6 items-center">
+                <div class="md:col-span-1 scroll-reveal">
+                    <span class="text-ocean-600 font-semibold tracking-wider uppercase text-sm">Current Conditions</span>
+                    <h2 class="font-serif text-3xl font-bold text-gray-900 dark:text-white mt-2 mb-4">Freetown City Weather</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Plan your perfect getaway with real-time weather updates from our coastal location.</p>
+                </div>
+                <div class="md:col-span-2 scroll-reveal" style="transition-delay:0.1s">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="weather-widget-card text-center">
+                            <div class="text-3xl mb-1" id="weather-icon">☀️</div>
+                            <div class="text-2xl font-bold" id="weather-temp">30°C</div>
+                            <div class="text-sm opacity-80" id="weather-condition">Sunny</div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 text-center shadow-lg">
+                            <div class="text-2xl mb-1">💨</div>
+                            <div class="text-xl font-bold text-gray-900 dark:text-white" id="weather-wind">12 mph</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">Wind</div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 text-center shadow-lg">
+                            <div class="text-2xl mb-1">💧</div>
+                            <div class="text-xl font-bold text-gray-900 dark:text-white" id="weather-humidity">65%</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">Humidity</div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 text-center shadow-lg">
+                            <div class="text-2xl mb-1">🌊</div>
+                            <div class="text-xl font-bold text-gray-900 dark:text-white" id="weather-water">33°C</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">Water Temp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-10 h-10 bg-lodge-500 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    </div>
+                    <span class="font-serif text-2xl font-bold">Leisure Lodge</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed max-w-md">Your home away from home. We pride ourselves on delivering exceptional hospitality and creating unforgettable memories for every guest.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="rooms.html" class="hover:text-lodge-400 transition">Rooms & Suites</a></li>
+                    <li><a href="amenities.html" class="hover:text-lodge-400 transition">Amenities</a></li>
+                    <li><a href="about.html" class="hover:text-lodge-400 transition">About Us</a></li>
+                    <li><a href="faq.html" class="hover:text-lodge-400 transition">FAQ</a></li>
+                    <li><a href="contact.html" class="hover:text-lodge-400 transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/leisurelodgehotel" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-lodge-500 rounded-full flex items-center justify-center transition" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f text-white text-base" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/leisurelodgehotel" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-lodge-500 rounded-full flex items-center justify-center transition" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram text-white text-base" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@leisurelodgehotel" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-lodge-500 rounded-full flex items-center justify-center transition" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok text-white text-base" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-500 text-sm">&copy; 2026 Leisure Lodge Hotel. All rights reserved.</p>
+            <div class="flex gap-6 text-gray-500 text-sm">
+                <a href="#" class="hover:text-lodge-400 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-lodge-400 transition">Terms of Service</a>
+                <a href="#" class="hover:text-lodge-400 transition">Accessibility</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <div id="booking-modal" class="booking-modal fixed inset-0 z-50 items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeBookingModal()"></div>
+    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-lg w-full relative z-10 max-h-[90vh] overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+        <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
+            <h3 id="booking-title" class="font-serif text-2xl font-bold text-gray-900 dark:text-white">Book Your Stay</h3>
+            <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 flex items-center justify-center transition" aria-label="Close booking modal">
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <div id="booking-form-content">
+                <div id="selected-room-info" class="bg-lodge-50 dark:bg-lodge-900/20 rounded-xl p-4 mb-6 hidden">
+                    <div class="flex items-center gap-3">
+                        <img id="modal-room-img" src="" alt="" class="w-16 h-16 rounded-lg object-cover">
+                        <div>
+                            <div class="font-semibold text-gray-900 dark:text-white" id="modal-room-name"></div>
+                            <div class="text-lodge-600 font-bold" id="modal-room-price"></div>
+                        </div>
+                    </div>
+                </div>
+                <form id="booking-form" class="space-y-5" novalidate>
+                    <div>
+                        <label for="room-select" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Select Room *</label>
+                        <select id="room-select" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition" onchange="updateRoomPreview()">
+                            <option value="">Choose a room...</option>
+                        </select>
+                        <p id="room-error" class="text-red-500 text-sm mt-1 hidden">Please select a room</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="checkin" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Check-in *</label>
+                            <input type="date" id="checkin" required class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition">
+                            <p id="checkin-error" class="text-red-500 text-sm mt-1 hidden">Invalid date</p>
+                        </div>
+                        <div>
+                            <label for="checkout" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Check-out *</label>
+                            <input type="date" id="checkout" required class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition">
+                            <p id="checkout-error" class="text-red-500 text-sm mt-1 hidden">Must be after check-in</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="guests" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Guests</label>
+                            <select id="guests" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition">
+                                <option value="1">1 Guest</option>
+                                <option value="2" selected>2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="guest-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full Name *</label>
+                            <input type="text" id="guest-name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition" placeholder="Your name">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="guest-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email *</label>
+                        <input type="email" id="guest-email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition" placeholder="your@email.com">
+                    </div>
+                    <div>
+                        <label for="guest-phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone *</label>
+                        <input type="tel" id="guest-phone" required class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition" placeholder="+1 (555) 000-0000">
+                    </div>
+                    <div>
+                        <label for="special-requests" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Special Requests</label>
+                        <textarea id="special-requests" rows="2" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition resize-none" placeholder="Any special requirements..."></textarea>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-slate-700 rounded-xl p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-600 dark:text-gray-400">Nights</span>
+                            <span class="font-semibold dark:text-white" id="summary-nights">0</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-600 dark:text-gray-400">Price per night</span>
+                            <span class="font-semibold dark:text-white" id="summary-price">$0</span>
+                        </div>
+                        <div class="border-t border-gray-200 dark:border-gray-600 pt-2 flex justify-between items-center">
+                            <span class="font-semibold text-gray-900 dark:text-white">Total Estimate</span>
+                            <span class="font-bold text-xl text-lodge-600" id="summary-total">$0</span>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">* Payment will be processed at check-in. This is a reservation request.</p>
+                    </div>
+                    <button type="submit" class="w-full bg-lodge-500 hover:bg-lodge-600 text-white py-4 rounded-xl font-semibold text-lg transition shadow-lg hover:shadow-xl">Confirm Reservation</button>
+                </form>
+            </div>
+            <div id="booking-success" class="hidden text-center py-8">
+                <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6 success-check">
+                    <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mb-3">Reservation Requested!</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-2">Thank you, <span id="success-name"></span>!</p>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">We've received your booking request for <span id="success-room" class="font-semibold"></span>. Our team will contact you shortly to confirm your reservation.</p>
+                <div class="bg-gray-50 dark:bg-slate-700 rounded-xl p-4 mb-6 text-left">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="text-gray-500 dark:text-gray-400">Check-in:</span><div class="font-semibold dark:text-white" id="success-checkin"></div></div>
+                        <div><span class="text-gray-500 dark:text-gray-400">Check-out:</span><div class="font-semibold dark:text-white" id="success-checkout"></div></div>
+                        <div><span class="text-gray-500 dark:text-gray-400">Guests:</span><div class="font-semibold dark:text-white" id="success-guests"></div></div>
+                        <div><span class="text-gray-500 dark:text-gray-400">Total:</span><div class="font-semibold text-lodge-600" id="success-total"></div></div>
+                    </div>
+                </div>
+                <button onclick="closeBookingModal()" class="bg-gray-900 dark:bg-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 text-white px-8 py-3 rounded-full font-medium transition">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close gallery">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" onclick="prevLightboxImage()" aria-label="Previous image">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" loading="lazy">
+    <button class="lightbox-nav lightbox-next" onclick="nextLightboxImage()" aria-label="Next image">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <div class="lightbox-counter"><span id="lb-current">1</span> / <span id="lb-total">6</span></div>
+</div>
+    <div id="toast" class="toast">
+    <svg class="w-5 h-5 text-green-400 dark:text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+    <span id="toast-message">Message sent successfully!</span>
+</div>
+    <button id="back-to-top" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+</button>
+    <div id="cookie-banner" class="cookie-banner">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-center sm:text-left">We use cookies to enhance your experience, analyze site traffic, and serve personalized content. By continuing, you agree to our use of cookies.</p>
+        <div class="flex gap-3 flex-shrink-0">
+            <button onclick="acceptCookies()" class="bg-lodge-500 hover:bg-lodge-600 px-6 py-2 rounded-full text-sm font-medium transition">Accept All</button>
+            <button onclick="declineCookies()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-full text-sm font-medium transition">Essential Only</button>
+        </div>
+    </div>
+</div>
+    <script src="js/main.js"></script>
+</body>
+</html>
