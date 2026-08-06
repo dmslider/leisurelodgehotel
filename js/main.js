@@ -2,9 +2,9 @@
 const rooms = [
     {
         id: 'deluxe-king',
-        name: 'Deluxe King Room',
+        name: 'Deluxe Room',
         description: 'Spacious room with a plush king bed, city views, and modern amenities for a comfortable stay.',
-        price: 189,
+        price: 95,
         images: [
             'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
             'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
@@ -17,9 +17,9 @@ const rooms = [
     },
     {
         id: 'ocean-suite',
-        name: 'Ocean View Suite',
+        name: 'Standard Room',
         description: 'Breathtaking ocean views from your private balcony. Features a separate living area and premium furnishings.',
-        price: 289,
+        price: 75,
         images: [
             'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80',
             'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
@@ -38,7 +38,6 @@ const rooms = [
         images: [
             'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
             'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
-            'https://images.unsplash.com/photo-1595576508898-0a3bc4629ac3?w=800&q=80',
             'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80'
         ],
         guests: 4,
@@ -77,11 +76,11 @@ const rooms = [
     },
     {
         id: 'cozy-twin',
-        name: 'Cozy Twin Room',
+        name: 'Sharing Room',
         description: 'Ideal for friends or colleagues with two comfortable twin beds and a functional workspace.',
-        price: 159,
+        price: 89,
         images: [
-            'https://images.unsplash.com/photo-1595576508898-0a3bc4629ac3?w=800&q=80',
+            '/img/IMG-sharedroom.jpg',
             'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
             'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
             'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80'
@@ -93,8 +92,8 @@ const rooms = [
 ];
 
 const amenities = [
-    { name: 'Swimming Pool', icon: 'fa-water', desc: 'Infinity pool with ocean views' },
-    { name: 'Spa & Wellness', icon: 'fa-spa', desc: 'Full-service spa treatments' },
+    { name: 'Conference', icon: 'fa-hotel', desc: 'Conference hall for hosting events' },
+    { name: 'Secure Parking', icon: 'fa-parking', desc: 'Valet or self parking' },
     { name: 'Fine Dining', icon: 'fa-utensils', desc: 'Award-winning restaurant' },
     { name: 'Fitness Center', icon: 'fa-dumbbell', desc: '24/7 state-of-the-art gym' },
     { name: 'Free WiFi', icon: 'fa-wifi', desc: 'High-speed internet everywhere' },
