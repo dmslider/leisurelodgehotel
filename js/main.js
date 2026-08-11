@@ -6,10 +6,10 @@ const rooms = [
         description: 'Spacious room with a plush king bed, Features a separate living area and premium furnishings.',
         price: 95,
         images: [
-            'img/deluxe.png',
-            'img/deluxe_2.png',
+            'img/Deluxe.png',
+            'img/Deluxe_2.png',
             'img/livingspace.jpg',
-            'img/deluxe_3.jpg'
+            'img/Deluxe_3.jpg'
             
         ],
         guests: 2,
@@ -22,7 +22,7 @@ const rooms = [
         description: 'Breathtaking ocean views from your private balcony. city views, and modern amenities for a comfortable stay. ',
         price: 75,
         images: [
-            'img/standard_room.png',
+            'img/Standard_Room.png',
             'img/standard_2.jpg',
            
         ],
