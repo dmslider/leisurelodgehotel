@@ -28,7 +28,7 @@ const rooms = [
         ],
         guests: 2,
         size: '40 m²',
-        features: ['Ocean View', 'Balcony',  'Premium Amenities']
+        features: ['Ocean View', 'Balcony',  'Work Desk', 'Fridge']
     },
     
     {
@@ -43,8 +43,8 @@ const rooms = [
             'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80'
         ],
         guests: 2,
-        size: '30 m²',
-        features: ['2 Twin Beds', 'Work Desk', 'Free WiFi', 'Coffee Maker']
+        size: '35 m²',
+        features: ['2 Twin Beds', 'Work Desk', 'Free WiFi',]
     }
 ];
 
