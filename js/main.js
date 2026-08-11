@@ -591,7 +591,7 @@ function renderRooms() {
     grid.innerHTML = rooms.map((room, i) => `
         <div class="room-card bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal" style="transition-delay:${i * 0.1}s">
             <div class="relative overflow-hidden h-56">
-                <img src="${room.images[0]}" alt="${room.name}" loading="lazy" class="room-img w-full h-full object-cover transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80'">
+                <img src="${room.images[0]}" alt="${room.name}" loading="lazy" class="room-img w-full h-full object-cover transition-transform duration-500" onerror="this.src='img/Deluxe.jpg'">
                 <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/70 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-semibold text-gray-800 dark:text-white">${room.size}</div>
                 <div class="absolute bottom-4 left-4 bg-lodge-500 text-white rounded-full px-3 py-1 text-sm font-semibold">$${room.price}/night</div>
             </div>
