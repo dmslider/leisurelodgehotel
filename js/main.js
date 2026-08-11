@@ -6,10 +6,10 @@ const rooms = [
         description: 'Spacious room with a plush king bed, Features a separate living area and premium furnishings.',
         price: 95,
         images: [
-            '/img/deluxe.png',
-            '/img/deluxe_2.png',
-            '/img/livingspace.jpg',
-            '/img/deluxe_3.jpg'
+            'img/deluxe.png',
+            'img/deluxe_2.png',
+            'img/livingspace.jpg',
+            'img/deluxe_3.jpg'
             
         ],
         guests: 2,
@@ -22,8 +22,8 @@ const rooms = [
         description: 'Breathtaking ocean views from your private balcony. city views, and modern amenities for a comfortable stay. ',
         price: 75,
         images: [
-            '/img/standard_room.png',
-            '/img/standard_2.jpg',
+            'img/standard_room.png',
+            'img/standard_2.jpg',
            
         ],
         guests: 2,
@@ -37,10 +37,8 @@ const rooms = [
         description: 'Ideal for friends or colleagues with two comfortable twin beds and a functional workspace.',
         price: 89,
         images: [
-            '/img/IMG-sharedroom.jpg',
+            'img/IMG-sharedroom.jpg',
             'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
-            'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
-            'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80'
         ],
         guests: 2,
         size: '35 m²',
