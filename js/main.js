@@ -3,77 +3,34 @@ const rooms = [
     {
         id: 'deluxe-king',
         name: 'Deluxe Room',
-        description: 'Spacious room with a plush king bed, city views, and modern amenities for a comfortable stay.',
+        description: 'Spacious room with a plush king bed, Features a separate living area and premium furnishings.',
         price: 95,
         images: [
-            'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
-            'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
-            'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
-            'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80'
+            '/img/deluxe.png',
+            '/img/deluxe_2.png',
+            '/img/livingspace.jpg',
+            '/img/deluxe_3.jpg'
+            
         ],
         guests: 2,
-        size: '35 m²',
-        features: ['King Bed', 'City View', 'Free WiFi', 'Mini Bar']
+        size: '50 m²',
+        features: ['King Bed', 'Living Area', 'Free WiFi', 'Mini Bar' ]
     },
     {
         id: 'ocean-suite',
         name: 'Standard Room',
-        description: 'Breathtaking ocean views from your private balcony. Features a separate living area and premium furnishings.',
+        description: 'Breathtaking ocean views from your private balcony. city views, and modern amenities for a comfortable stay. ',
         price: 75,
         images: [
-            'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80',
-            'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
-            'https://images.unsplash.com/photo-1591088398332-8a7791972843?w=800&q=80',
-            'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80'
-        ],
-        guests: 3,
-        size: '55 m²',
-        features: ['Ocean View', 'Balcony', 'Living Area', 'Premium Amenities']
-    },
-    {
-        id: 'family-room',
-        name: 'Family Room',
-        description: 'Perfect for families with two queen beds, extra space, and kid-friendly amenities.',
-        price: 249,
-        images: [
-            'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=80',
-            'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80',
-            'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80'
-        ],
-        guests: 4,
-        size: '45 m²',
-        features: ['2 Queen Beds', 'Family Friendly', 'Extra Space', 'Connecting Rooms']
-    },
-    {
-        id: 'presidential',
-        name: 'Presidential Suite',
-        description: 'The ultimate luxury experience with panoramic views, private terrace, and butler service.',
-        price: 499,
-        images: [
-            'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
-            'https://images.unsplash.com/photo-1591088398332-8a7791972843?w=800&q=80',
-            'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80',
-            'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&q=80'
+            '/img/standard_room.png',
+            '/img/standard_2.jpg',
+           
         ],
         guests: 2,
-        size: '95 m²',
-        features: ['Panoramic View', 'Private Terrace', 'Butler Service', 'Jacuzzi']
+        size: '40 m²',
+        features: ['Ocean View', 'Balcony',  'Premium Amenities']
     },
-    {
-        id: 'garden-villa',
-        name: 'Garden Villa',
-        description: 'A private villa surrounded by lush gardens with direct pool access and outdoor dining area.',
-        price: 349,
-        images: [
-            'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
-            'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
-            'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80',
-            'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&q=80'
-        ],
-        guests: 3,
-        size: '70 m²',
-        features: ['Garden Access', 'Private Pool', 'Outdoor Dining', 'Kitchenette']
-    },
+    
     {
         id: 'cozy-twin',
         name: 'Sharing Room',
