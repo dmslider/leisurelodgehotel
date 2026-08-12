@@ -396,7 +396,7 @@ body {
 /* ==================== PAGE HEADER ==================== */
 .page-header {
     background: linear-gradient(135deg, rgba(12,74,110,0.9) 0%, rgba(135,74,23,0.8) 100%),
-                url('/img/Entrance.png') center/cover;
+                url('/img/Entrance.jpg') center/cover;
     min-height: 80vh;
     display: flex;
     align-items: center;
