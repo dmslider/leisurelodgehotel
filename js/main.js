@@ -593,6 +593,11 @@ function initBookingForm() {
             const successDiv = document.getElementById('booking-success');
             if (formContent) formContent.classList.add('hidden');
             if (successDiv) successDiv.classList.remove('hidden');
+
+            const dialog = form.closest('[role="dialog"]');
+            if (dialog) dialog.scrollTop = 0;
+
+            showToast('Booking request sent! We\'ll confirm your reservation shortly.');
         } catch (err) {
             showToast('Something went wrong sending your request. Please try again or call us directly.');
         } finally {
