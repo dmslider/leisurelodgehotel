@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leisurelodgehotel.com/sitemap.xml

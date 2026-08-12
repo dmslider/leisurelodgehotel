@@ -69,6 +69,30 @@ const testimonials = [
 window.rooms = rooms;
 window.amenities = amenities;
 
+// ==================== ANALYTICS ====================
+const GA_MEASUREMENT_ID = 'G-B3BZYB9HXD';
+const CONTACT_EMAIL = 'leisurelodgeh@gmail.com';
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
+
+function loadAnalytics() {
+    if (window.gaInitialized || GA_MEASUREMENT_ID.includes('XXXXXXXXXX')) return;
+    window.gaInitialized = true;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID);
+}
+
+function trackEvent(name, params = {}) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params);
+}
+
 // ==================== DARK MODE ====================
 function initDarkMode() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
@@ -201,6 +225,7 @@ function initBackToTop() {
 // ==================== COOKIE BANNER ====================
 function initCookieBanner() {
     const banner = document.getElementById('cookie-banner');
+    if (localStorage.getItem('cookies') === 'accepted') loadAnalytics();
     if (!banner || localStorage.getItem('cookies')) return;
 
     setTimeout(() => banner.classList.add('show'), 2000);
@@ -209,6 +234,7 @@ function initCookieBanner() {
 function acceptCookies() {
     localStorage.setItem('cookies', 'accepted');
     document.getElementById('cookie-banner').classList.remove('show');
+    loadAnalytics();
 }
 
 function declineCookies() {
@@ -437,7 +463,7 @@ function updateRoomPreview() {
         const modalImg = document.getElementById('modal-room-img');
         const modalName = document.getElementById('modal-room-name');
         const modalPrice = document.getElementById('modal-room-price');
-        if (modalImg) { modalImg.src = room.image; modalImg.alt = room.name; }
+        if (modalImg) { modalImg.src = room.images[0]; modalImg.alt = room.name; }
         if (modalName) modalName.textContent = room.name;
         if (modalPrice) modalPrice.textContent = `$${room.price}/night`;
         info.classList.remove('hidden');
@@ -502,7 +528,7 @@ function initBookingForm() {
     const form = document.getElementById('booking-form');
     if (!form) return;
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
         const roomId = document.getElementById('room-select').value;
@@ -517,31 +543,61 @@ function initBookingForm() {
 
         const room = rooms.find(r => r.id === roomId);
         const name = document.getElementById('guest-name').value;
+        const email = document.getElementById('guest-email').value;
+        const phone = document.getElementById('guest-phone').value;
         const checkin = document.getElementById('checkin').value;
         const checkout = document.getElementById('checkout').value;
         const guests = document.getElementById('guests').value;
+        const specialRequests = document.getElementById('special-requests').value;
         const total = document.getElementById('summary-total').textContent;
 
-        const successName = document.getElementById('success-name');
-        const successRoom = document.getElementById('success-room');
-        const successCheckin = document.getElementById('success-checkin');
-        const successCheckout = document.getElementById('success-checkout');
-        const successGuests = document.getElementById('success-guests');
-        const successTotal = document.getElementById('success-total');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
 
-        if (successName) successName.textContent = name;
-        if (successRoom) successRoom.textContent = room.name;
-        if (successCheckin) successCheckin.textContent = new Date(checkin).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-        if (successCheckout) successCheckout.textContent = new Date(checkout).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-        if (successGuests) successGuests.textContent = guests + ' Guest' + (guests > 1 ? 's' : '');
-        if (successTotal) successTotal.textContent = total;
+        try {
+            const response = await fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify({
+                    _subject: `New Booking Request — ${room.name}`,
+                    Room: room.name,
+                    'Check-in': checkin,
+                    'Check-out': checkout,
+                    Guests: guests,
+                    Name: name,
+                    Email: email,
+                    Phone: phone,
+                    'Special Requests': specialRequests,
+                    'Total Estimate': total
+                })
+            });
+            if (!response.ok) throw new Error('Booking request failed');
 
-        const formContent = document.getElementById('booking-form-content');
-        const successDiv = document.getElementById('booking-success');
-        if (formContent) formContent.classList.add('hidden');
-        if (successDiv) successDiv.classList.remove('hidden');
+            trackEvent('generate_lead', { room: room.name, value: parseFloat(total.replace(/[^0-9.]/g, '')) || 0, currency: 'USD' });
 
-        localStorage.setItem('bookingDraft', JSON.stringify({ roomId, checkin, checkout, guests, name }));
+            const successName = document.getElementById('success-name');
+            const successRoom = document.getElementById('success-room');
+            const successCheckin = document.getElementById('success-checkin');
+            const successCheckout = document.getElementById('success-checkout');
+            const successGuests = document.getElementById('success-guests');
+            const successTotal = document.getElementById('success-total');
+
+            if (successName) successName.textContent = name;
+            if (successRoom) successRoom.textContent = room.name;
+            if (successCheckin) successCheckin.textContent = new Date(checkin).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            if (successCheckout) successCheckout.textContent = new Date(checkout).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            if (successGuests) successGuests.textContent = guests + ' Guest' + (guests > 1 ? 's' : '');
+            if (successTotal) successTotal.textContent = total;
+
+            const formContent = document.getElementById('booking-form-content');
+            const successDiv = document.getElementById('booking-success');
+            if (formContent) formContent.classList.add('hidden');
+            if (successDiv) successDiv.classList.remove('hidden');
+        } catch (err) {
+            showToast('Something went wrong sending your request. Please try again or call us directly.');
+        } finally {
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Confirm Reservation'; }
+        }
     });
 
     const checkinEl = document.getElementById('checkin');
@@ -576,10 +632,42 @@ function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        showToast('Message sent successfully! We will get back to you soon.');
-        this.reset();
+
+        const first = document.getElementById('contact-first').value;
+        const last = document.getElementById('contact-last').value;
+        const email = document.getElementById('contact-email').value;
+        const phone = document.getElementById('contact-phone').value;
+        const subject = document.getElementById('contact-subject').value;
+        const message = document.getElementById('contact-message').value;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+
+        try {
+            const response = await fetch(FORM_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify({
+                    _subject: `Contact Form: ${subject}`,
+                    Name: `${first} ${last}`,
+                    Email: email,
+                    Phone: phone,
+                    Subject: subject,
+                    Message: message
+                })
+            });
+            if (!response.ok) throw new Error('Message failed to send');
+
+            trackEvent('contact_form_submit', { subject });
+            showToast('Message sent successfully! We will get back to you soon.');
+            form.reset();
+        } catch (err) {
+            showToast('Something went wrong sending your message. Please email us directly.');
+        } finally {
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+        }
     });
 }
 

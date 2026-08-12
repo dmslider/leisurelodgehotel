@@ -7,6 +7,19 @@
     <meta name="description" content="View detailed information and photos of our luxury rooms and suites at Leisure Lodge Hotel.">
     <meta name="author" content="Leisure Lodge Hotel">
     <meta name="robots" content="index, follow">
+    <meta name="keywords" content="hotel room details, luxury suite, room amenities, Leisure Lodge, Paradise City">
+    <link rel="canonical" href="https://leisurelodgehotel.com/room-detail.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leisurelodgehotel.com/room-detail.html">
+    <meta property="og:title" content="Room Details | Leisure Lodge Hotel">
+    <meta property="og:description" content="View detailed information and photos of our luxury rooms and suites at Leisure Lodge Hotel.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Room Details | Leisure Lodge Hotel">
+    <meta name="twitter:description" content="View detailed information and photos of our luxury rooms and suites at Leisure Lodge Hotel.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,7 +80,7 @@
                     <a href="about.html" class="nav-link text-white/90 hover:text-white font-medium transition">About</a>
                     <a href="faq.html" class="nav-link text-white/90 hover:text-white font-medium transition">FAQ</a>
                     <a href="contact.html" class="nav-link text-white/90 hover:text-white font-medium transition">Contact</a>
-                    <button onclick="window.location.href='rooms.html'" class="bg-lodge-500 hover:bg-lodge-600 text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg hover:shadow-xl">Book Now</button>
+                    <button onclick="openBookingModal()" class="bg-lodge-500 hover:bg-lodge-600 text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg hover:shadow-xl">Book Now</button>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle mobile menu" aria-expanded="false">
                     <i class="fa-solid fa-bars w-6 h-6" aria-hidden="true"></i>
@@ -81,6 +94,7 @@
                 <a href="about.html" class="block text-gray-800 font-medium py-2" role="menuitem">About</a>
                 <a href="faq.html" class="block text-gray-800 font-medium py-2" role="menuitem">FAQ</a>
                 <a href="contact.html" class="block text-gray-800 font-medium py-2" role="menuitem">Contact</a>
+                <button onclick="openBookingModal()" class="w-full bg-lodge-500 text-white py-3 rounded-full font-medium">Book Now</button>
             </div>
         </div>
     </nav>
@@ -146,17 +160,148 @@
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-gray-500 text-sm">&copy; 2026 Leisure Lodge Hotel. All rights reserved.</p>
                 <div class="flex gap-6 text-gray-500 text-sm">
-                    <a href="#" class="hover:text-lodge-400 transition">Privacy Policy</a>
-                    <a href="#" class="hover:text-lodge-400 transition">Terms of Service</a>
-                    <a href="#" class="hover:text-lodge-400 transition">Accessibility</a>
+                    <a href="privacy-policy.html" class="hover:text-lodge-400 transition">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="hover:text-lodge-400 transition">Terms of Service</a>
+                    <a href="accessibility.html" class="hover:text-lodge-400 transition">Accessibility</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <div id="booking-modal" class="booking-modal fixed inset-0 z-50 items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeBookingModal()"></div>
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-lg w-full relative z-10 max-h-[90vh] overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="booking-title">
+            <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
+                <h3 id="booking-title" class="font-serif text-2xl font-bold text-gray-900 dark:text-white">Book Your Stay</h3>
+                <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 flex items-center justify-center transition" aria-label="Close booking modal">
+                    <svg class="w-5 h-5 text-gray-500 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="p-6">
+                <div id="booking-form-content">
+                    <div id="selected-room-info" class="bg-lodge-50 dark:bg-lodge-900/20 rounded-xl p-4 mb-6 hidden">
+                        <div class="flex items-center gap-3">
+                            <img id="modal-room-img" src="" alt="" class="w-16 h-16 rounded-lg object-cover">
+                            <div>
+                                <div class="font-semibold text-gray-900 dark:text-white" id="modal-room-name"></div>
+                                <div class="text-lodge-600 font-bold" id="modal-room-price"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="booking-form" class="space-y-5" novalidate>
+                        <div>
+                            <label for="room-select" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Select Room *</label>
+                            <select id="room-select" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition" onchange="updateRoomPreview()">
+                                <option value="">Choose a room...</option>
+                            </select>
+                            <p id="room-error" class="text-red-500 text-sm mt-1 hidden">Please select a room</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="checkin" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Check-in *</label>
+                                <input type="date" id="checkin" required class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition">
+                                <p id="checkin-error" class="text-red-500 text-sm mt-1 hidden">Invalid date</p>
+                            </div>
+                            <div>
+                                <label for="checkout" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Check-out *</label>
+                                <input type="date" id="checkout" required class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition">
+                                <p id="checkout-error" class="text-red-500 text-sm mt-1 hidden">Must be after check-in</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="guests" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Guests</label>
+                                <select id="guests" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition">
+                                    <option value="1">1 Guest</option>
+                                    <option value="2" selected>2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="guest-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full Name *</label>
+                                <input type="text" id="guest-name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition" placeholder="Your name">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="guest-email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email *</label>
+                            <input type="email" id="guest-email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label for="guest-phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone *</label>
+                            <input type="tel" id="guest-phone" required class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <div>
+                            <label for="special-requests" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Special Requests</label>
+                            <textarea id="special-requests" rows="2" class="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 dark:bg-slate-700 dark:text-white focus:border-lodge-500 focus:ring-2 focus:ring-lodge-200 outline-none transition resize-none" placeholder="Any special requirements..."></textarea>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-slate-700 rounded-xl p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-600 dark:text-gray-400">Nights</span>
+                                <span class="font-semibold dark:text-white" id="summary-nights">0</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-600 dark:text-gray-400">Price per night</span>
+                                <span class="font-semibold dark:text-white" id="summary-price">$0</span>
+                            </div>
+                            <div class="border-t border-gray-200 dark:border-gray-600 pt-2 flex justify-between items-center">
+                                <span class="font-semibold text-gray-900 dark:text-white">Total Estimate</span>
+                                <span class="font-bold text-xl text-lodge-600" id="summary-total">$0</span>
+                            </div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-2">* Payment will be processed at check-in. This is a reservation request.</p>
+                        </div>
+                        <button type="submit" class="w-full bg-lodge-500 hover:bg-lodge-600 text-white py-4 rounded-xl font-semibold text-lg transition shadow-lg hover:shadow-xl">Confirm Reservation</button>
+                    </form>
+                </div>
+                <div id="booking-success" class="hidden text-center py-8">
+                    <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6 success-check">
+                        <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mb-3">Reservation Requested!</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2">Thank you, <span id="success-name"></span>!</p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">We've received your booking request for <span id="success-room" class="font-semibold"></span>. Our team will contact you shortly to confirm your reservation.</p>
+                    <div class="bg-gray-50 dark:bg-slate-700 rounded-xl p-4 mb-6 text-left">
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <div><span class="text-gray-500 dark:text-gray-400">Check-in:</span><div class="font-semibold dark:text-white" id="success-checkin"></div></div>
+                            <div><span class="text-gray-500 dark:text-gray-400">Check-out:</span><div class="font-semibold dark:text-white" id="success-checkout"></div></div>
+                            <div><span class="text-gray-500 dark:text-gray-400">Guests:</span><div class="font-semibold dark:text-white" id="success-guests"></div></div>
+                            <div><span class="text-gray-500 dark:text-gray-400">Total:</span><div class="font-semibold text-lodge-600" id="success-total"></div></div>
+                        </div>
+                    </div>
+                    <button onclick="closeBookingModal()" class="bg-gray-900 dark:bg-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 text-white px-8 py-3 rounded-full font-medium transition">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close gallery">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <button class="lightbox-nav lightbox-prev" onclick="prevLightboxImage()" aria-label="Previous image">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="" loading="lazy">
+        <button class="lightbox-nav lightbox-next" onclick="nextLightboxImage()" aria-label="Next image">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <div class="lightbox-counter"><span id="lb-current">1</span> / <span id="lb-total">6</span></div>
+    </div>
+    <div id="toast" class="toast">
+        <svg class="w-5 h-5 text-green-400 dark:text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        <span id="toast-message">Message sent successfully!</span>
+    </div>
     <button id="back-to-top" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
     </button>
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-center sm:text-left">We use cookies to enhance your experience, analyze site traffic, and serve personalized content. By continuing, you agree to our use of cookies.</p>
+            <div class="flex gap-3 flex-shrink-0">
+                <button onclick="acceptCookies()" class="bg-lodge-500 hover:bg-lodge-600 px-6 py-2 rounded-full text-sm font-medium transition">Accept All</button>
+                <button onclick="declineCookies()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-full text-sm font-medium transition">Essential Only</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
     <script>
@@ -191,6 +336,9 @@
 
         document.getElementById('room-detail-title').textContent = room.name;
         document.getElementById('breadcrumb-room-name').textContent = room.name;
+        document.title = `${room.name} | Leisure Lodge Hotel`;
+        const metaDescTag = document.querySelector('meta[name="description"]');
+        if (metaDescTag) metaDescTag.setAttribute('content', room.description);
 
         document.getElementById('room-detail-content').innerHTML = `
             <div class="grid lg:grid-cols-2 gap-12">

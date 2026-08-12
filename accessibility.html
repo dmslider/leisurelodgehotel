@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Leisure Lodge Hotel">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://leisurelodgehotel.com/accessibility.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="css/styles.css">
+
+<script>
+tailwind.config = {
+    darkMode: 'class',
+    theme: {
+        extend: {
+            fontFamily: {
+                serif: ['Playfair Display', 'serif'],
+                sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+                lodge: {
+                    50: '#fdf8f3', 100: '#f9ead5', 200: '#f2d4a8', 300: '#e8b46f',
+                    400: '#d9933f', 500: '#c77a1e', 600: '#a96018', 700: '#874a17',
+                    800: '#6f3d1a', 900: '#5c331a',
+                },
+                ocean: {
+                    50: '#f0f9ff', 100: '#e0f2fe', 200: '#bae6fd', 300: '#7dd3fc',
+                    400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1',
+                    800: '#075985', 900: '#0c4a6e',
+                }
+            }
+        }
+    }
+};
+</script>
+    <title>Accessibility | Leisure Lodge Hotel</title>
+    <meta name="description" content="Leisure Lodge Hotel's commitment to accessibility, both on-property and on this website.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://leisurelodgehotel.com/accessibility.html">
+    <meta property="og:title" content="Accessibility | Leisure Lodge Hotel">
+    <meta property="og:description" content="Leisure Lodge Hotel's commitment to accessibility, both on-property and on this website.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Accessibility | Leisure Lodge Hotel">
+    <meta name="twitter:description" content="Leisure Lodge Hotel's commitment to accessibility, both on-property and on this website.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏨%3C/text%3E%3C/svg%3E">
+</head>
+<body class="font-sans text-gray-800 antialiased">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <button id="dark-mode-toggle" class="fixed top-24 right-6 z-40 w-12 h-12 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center transition-all hover:scale-110" aria-label="Toggle dark mode">
+    <i id="sun-icon" class="fa-solid fa-sun w-6 h-6 text-amber-500 hidden" aria-hidden="true"></i>
+    <i id="moon-icon" class="fa-solid fa-moon w-6 h-6 text-indigo-500" aria-hidden="true"></i>
+</button>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="index.html" class="flex items-center gap-2" aria-label="Leisure Lodge Hotel - Home">
+                <div class="w-10 h-10 bg-lodge-500 rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-hotel w-6 h-6 text-white"></i>
+                </div>
+                <span class="font-serif text-2xl font-bold text-white" id="nav-logo-text">Leisure Lodge</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="rooms.html" class="nav-link text-white/90 hover:text-white font-medium transition">Rooms</a>
+                <a href="amenities.html" class="nav-link text-white/90 hover:text-white font-medium transition">Amenities</a>
+                <a href="about.html" class="nav-link text-white/90 hover:text-white font-medium transition">About</a>
+                <a href="faq.html" class="nav-link text-white/90 hover:text-white font-medium transition">FAQ</a>
+                <a href="contact.html" class="nav-link text-white/90 hover:text-white font-medium transition">Contact</a>
+                <button onclick="window.location.href='rooms.html'" class="bg-lodge-500 hover:bg-lodge-600 text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg hover:shadow-xl">Book Now</button>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Toggle mobile menu" aria-expanded="false">
+                <i class="fa-solid fa-bars w-6 h-6" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg shadow-lg" role="menu">
+        <div class="px-4 py-4 space-y-3">
+            <a href="rooms.html" class="block text-gray-800 font-medium py-2" role="menuitem">Rooms</a>
+            <a href="amenities.html" class="block text-gray-800 font-medium py-2" role="menuitem">Amenities</a>
+            <a href="about.html" class="block text-gray-800 font-medium py-2" role="menuitem">About</a>
+            <a href="faq.html" class="block text-gray-800 font-medium py-2" role="menuitem">FAQ</a>
+            <a href="contact.html" class="block text-gray-800 font-medium py-2" role="menuitem">Contact</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="min-height:40vh;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20">
+            <nav aria-label="Breadcrumb" class="breadcrumb mb-4">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span aria-current="page">Accessibility</span>
+            </nav>
+            <h1 class="font-serif text-5xl md:text-6xl font-bold text-white">Accessibility</h1>
+            <p class="text-white/80 text-lg mt-4 max-w-xl">Our commitment to guests of all abilities, on-property and online.</p>
+        </div>
+    </section>
+
+    <main id="main-content" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-600 dark:text-gray-400 leading-relaxed space-y-10">
+            <section>
+                <h2 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mb-3">Our Commitment</h2>
+                <p>Leisure Lodge Hotel is committed to providing a welcoming, accessible experience for every guest, whether you're staying with us or visiting this website.</p>
+            </section>
+            <section>
+                <h2 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mb-3">On-Property Accessibility</h2>
+                <p>All public areas of the hotel, including ramps, elevators, and the pool area, are wheelchair accessible. If you require an accessible room or have specific mobility needs, please let us know in the "Special Requests" field when booking, or contact our front desk directly so we can prepare for your stay.</p>
+            </section>
+            <section>
+                <h2 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mb-3">Website Accessibility</h2>
+                <p>We aim to align this website with the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA, including keyboard navigation, visible focus states, a skip-to-content link, descriptive alt text on images, and respect for your device's reduced-motion preference.</p>
+            </section>
+            <section>
+                <h2 class="font-serif text-2xl font-bold text-gray-900 dark:text-white mb-3">Feedback</h2>
+                <p>If you encounter any accessibility barrier on this site or during your stay, we want to hear about it. Reach out via our <a href="contact.html" class="text-lodge-500 hover:text-lodge-600 underline">contact page</a> or email <a href="mailto:leisurelodgeh@gmail.com" class="text-lodge-500 hover:text-lodge-600 underline">leisurelodgeh@gmail.com</a> and we'll do our best to help.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-10 h-10 bg-lodge-500 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    </div>
+                    <span class="font-serif text-2xl font-bold">Leisure Lodge</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed max-w-md">Your home away from home. We pride ourselves on delivering exceptional hospitality and creating unforgettable memories for every guest.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-3 text-gray-400">
+                    <li><a href="rooms.html" class="hover:text-lodge-400 transition">Rooms & Suites</a></li>
+                    <li><a href="amenities.html" class="hover:text-lodge-400 transition">Amenities</a></li>
+                    <li><a href="about.html" class="hover:text-lodge-400 transition">About Us</a></li>
+                    <li><a href="faq.html" class="hover:text-lodge-400 transition">FAQ</a></li>
+                    <li><a href="contact.html" class="hover:text-lodge-400 transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/leisurelodgehotel" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-lodge-500 rounded-full flex items-center justify-center transition" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f text-white text-base" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/leisurelodgehotel" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-lodge-500 rounded-full flex items-center justify-center transition" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram text-white text-base" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@leisurelodgehotel" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-gray-800 hover:bg-lodge-500 rounded-full flex items-center justify-center transition" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok text-white text-base" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-500 text-sm">&copy; 2026 Leisure Lodge Hotel. All rights reserved.</p>
+            <div class="flex gap-6 text-gray-500 text-sm">
+                <a href="privacy-policy.html" class="hover:text-lodge-400 transition">Privacy Policy</a>
+                <a href="terms-of-service.html" class="hover:text-lodge-400 transition">Terms of Service</a>
+                <a href="accessibility.html" class="hover:text-lodge-400 transition">Accessibility</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <button id="back-to-top" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+</button>
+    <div id="cookie-banner" class="cookie-banner">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-center sm:text-left">We use cookies to enhance your experience, analyze site traffic, and serve personalized content. By continuing, you agree to our use of cookies.</p>
+        <div class="flex gap-3 flex-shrink-0">
+            <button onclick="acceptCookies()" class="bg-lodge-500 hover:bg-lodge-600 px-6 py-2 rounded-full text-sm font-medium transition">Accept All</button>
+            <button onclick="declineCookies()" class="bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-full text-sm font-medium transition">Essential Only</button>
+        </div>
+    </div>
+</div>
+    <script src="js/main.js"></script>
+</body>
+</html>
