@@ -3,46 +3,41 @@ const rooms = [
     {
         id: 'deluxe-king',
         name: 'Deluxe Room',
-        description: 'Spacious room with a plush king bed, Features a separate living area and premium furnishings.',
-        price: 95,
+        description: 'Spacious and full Air Conditional Room with a plush King-size Bed and Sea-view Balcony.',
+        price: 90,
         images: [
             'img/Deluxe.jpg',
             'img/Deluxe_2.jpg',
             'img/livingspace.jpg',
             'img/deluxe_3.jpg'
-
         ],
         guests: 2,
-        size: '50 m²',
-        features: ['King Bed', 'Living Area', 'Free WiFi', 'Mini Bar' ]
+        features: ['Free WiFi', 'Mini Bar', 'DSTV', 'Tea/Coffee making facility' ]
     },
     {
         id: 'ocean-suite',
         name: 'Standard Room',
-        description: 'Breathtaking ocean views from your private balcony. city views, and modern amenities for a comfortable stay. ',
+        description: 'Spacious and full air Conditional rooms with a King-Size Bed and Sea-view Balcony.',
         price: 75,
         images: [
             'img/Standard_Room.jpg',
             'img/standard_2.jpg',
-
         ],
         guests: 2,
-        size: '40 m²',
-        features: ['Ocean View', 'Balcony',  'Work Desk', 'Fridge']
+        features: ['Free WiFi', 'Mini Bar',  'DSTV', 'Tea/Coffee Making Facility']
     },
     
     {
         id: 'cozy-twin',
         name: 'Sharing Room',
         description: 'Ideal for friends or colleagues with two comfortable twin beds and a functional workspace.',
-        price: 89,
+        price: 80,
         images: [
             'img/IMG-sharedroom.jpg',
             'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
         ],
         guests: 2,
-        size: '35 m²',
-        features: ['2 Twin Beds', 'Work Desk', 'Free WiFi',]
+        features: ['2 Twin Beds', 'DSTV', 'Free WiFi',]
     }
 ];
 
@@ -50,7 +45,6 @@ const amenities = [
     { name: 'Conference', icon: 'fa-hotel', desc: 'Conference hall for hosting events' },
     { name: 'Secure Parking', icon: 'fa-parking', desc: 'Valet or self parking' },
     { name: 'Fine Dining', icon: 'fa-utensils', desc: 'Award-winning restaurant' },
-    { name: 'Fitness Center', icon: 'fa-dumbbell', desc: '24/7 state-of-the-art gym' },
     { name: 'Free WiFi', icon: 'fa-wifi', desc: 'High-speed internet everywhere' },
     { name: 'Airport Shuttle', icon: 'fa-bus', desc: 'Complimentary transfers' },
     { name: 'Room Service', icon: 'fa-bell', desc: '24-hour in-room dining' },
@@ -685,7 +679,7 @@ function renderRooms() {
         <div class="room-card bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal" style="transition-delay:${i * 0.1}s">
             <div class="relative overflow-hidden h-56">
                 <img src="${room.images[0]}" alt="${room.name}" loading="lazy" class="room-img w-full h-full object-cover transition-transform duration-500" onerror="this.src='img/Deluxe.jpg'">
-                <div class="absolute top-4 right-4 bg-white/90 dark:bg-black/70 backdrop-blur-sm rounded-full px-3 py-1 text-sm font-semibold text-gray-800 dark:text-white">${room.size}</div>
+                
                 <div class="absolute bottom-4 left-4 bg-lodge-500 text-white rounded-full px-3 py-1 text-sm font-semibold">$${room.price}/night</div>
             </div>
             <div class="p-6">
