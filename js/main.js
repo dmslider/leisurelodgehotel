@@ -34,7 +34,6 @@ const rooms = [
         price: 80,
         images: [
             'img/IMG-sharedroom.jpg',
-            'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
         ],
         guests: 2,
         features: ['2 Twin Beds', 'DSTV', 'Free WiFi',]
